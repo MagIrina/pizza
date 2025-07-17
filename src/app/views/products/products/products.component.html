@@ -1,0 +1,19 @@
+<section class="products" id="products">
+  <div class="container">
+    <!--    asyncPipe асинхронное приминение pipe, позволяет выполнить только после отрисовки -->
+    <h2 class="products-title" id="products-title">Выберите свою любимую пиццу</h2>
+    <div class="products-items">
+
+<!--      <product-card *ngFor="let product-card of products" [product-card]="product-card" (addToCartEvent)="addToCart($event)"></product-card>-->
+      <!--      что-бы подписаться на событие дочернего компонента указываем (addToCartEvent)="addToCart($event(это как product-card))-->
+
+      <product-card *ngFor="let product of products" [product]="product"></product-card>
+
+    </div>
+
+<!--    лоадер для показа что идет загрузка с сервера-->
+    <div *ngIf="loading" class="loader-bg">
+      <div class="loader"></div>
+    </div>
+  </div>
+</section>

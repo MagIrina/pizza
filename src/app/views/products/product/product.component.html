@@ -1,0 +1,22 @@
+<section class="products">
+  <div class="container">
+    <!--    asyncPipe асинхронное приминение pipe, позволяет выполнить только после отрисовки -->
+    <h2 class="products-title">Описание пиццы</h2>
+    <div class="products-item">
+
+        <div class="product-image" *ngIf="product.image">
+<!--          <img src='assets/images/products/{{product.image}}'>-->
+          <img src='{{product.image}}'>
+        </div>
+        <custom-title [title]="product.title | uppercase" ></custom-title>
+        <div class="product-text">
+          {{product.description | wordUpper: ['сыр','томат', 'сос']}}
+        </div>
+        <div class="product-action" #elem>
+          <!--    <button class="btn btn-add-to-cart product-card-btn" (click)="addProductToCart()">В корзину</button>-->
+          <a class="btn btn-add-to-cart product-btn" routerLink="/order" [queryParams]="{product: product.title}">В корзину</a>
+        </div>
+
+    </div>
+  </div>
+</section>

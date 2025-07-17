@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiURL: 'https://testologia.ru/',
+  // apiURL: 'http://localhost:3000/',
+  //для дев сборок часто используют другой адрес, но бывает и один
 };
 
 /*
